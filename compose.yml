@@ -15,13 +15,13 @@ services:
 
       ONLINE_MODE: false
       SERVER_NAME: "Les potes: V2"
-      ICON: "./config/icon.png"
+      ICON: "%/config/icon.png"
       MOTD: "Bienvenue chez &o&3Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\nHébergé par &4lydia39&7."
       DIFFICULTY: "normal"
       VIEW_DISTANCE: 20
 
       ENABLE_WHITELIST: true
-      WHITELIST_FILE: ./config/whitelist.txt
+      WHITELIST_FILE: /config/whitelist.txt
       
       # RCON
       RCON_PASSWORD: $PASSWORD_RCON
@@ -34,6 +34,6 @@ services:
 
     volumes:
       - mc_data:/data
-
+      - ./config:/config/
 volumes:
   mc_data:
