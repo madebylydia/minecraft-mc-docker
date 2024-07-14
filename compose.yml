@@ -1,53 +1,53 @@
 services:
-  copy-files:
-    build: .
+  test:
+    # This is getting ridiculous, but at this point, I don't see what else I can do...
+    image: alpine:latest
+    entrypoint: ["sh", "-c"]
+    command: ["ls"]
     restart: no
-    volumes:
-      - mc_config:/config
+    
+#   mc:
+#     image: itzg/minecraft-server
+#     tty: true
+#     stdin_open: true
+#     ports:
+#       - "25565:25565"
 
-  mc:
-    image: itzg/minecraft-server
-    tty: true
-    stdin_open: true
-    ports:
-      - "25565:25565"
-    depends_on: [copy-files]
+#     environment:
+#       # Server settings
+#       EULA: "TRUE"
+#       TYPE: FABRIC
+#       VERSION: "1.20"
+#       USE_AIKAR_FLAGS: true
+#       SNOOPER_ENABLED: false
 
-    environment:
-      # Server settings
-      EULA: "TRUE"
-      TYPE: FABRIC
-      VERSION: "1.20"
-      USE_AIKAR_FLAGS: true
-      SNOOPER_ENABLED: false
+#       # Server metadata
+#       ONLINE_MODE: false
+#       SERVER_NAME: "Les potes: V2"
+#       ICON: /config/icon.png
+#       MOTD: "Bienvenue chez &o&3Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\nHébergé par &4lydia39&7."
 
-      # Server metadata
-      ONLINE_MODE: false
-      SERVER_NAME: "Les potes: V2"
-      ICON: /config/icon.png
-      MOTD: "Bienvenue chez &o&3Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\nHébergé par &4lydia39&7."
+#       # Game settings
+#       DIFFICULTY: normal
+#       VIEW_DISTANCE: 20
 
-      # Game settings
-      DIFFICULTY: normal
-      VIEW_DISTANCE: 20
+#       # Whitelist
+#       ENABLE_WHITELIST: true
+#       WHITELIST_FILE: /config/whitelist.txt
 
-      # Whitelist
-      ENABLE_WHITELIST: true
-      WHITELIST_FILE: /config/whitelist.txt
+#       # RCON
+#       RCON_PASSWORD: $SERVICE_PASSWORD_RCON
 
-      # RCON
-      RCON_PASSWORD: $SERVICE_PASSWORD_RCON
+#       # Mods
+#       MODRINTH_PROJECTS: |
+#         lithium
+#         modernfix
+#       MODRINTH_ALLOWED_VERSION_TYPE: release
 
-      # Mods
-      MODRINTH_PROJECTS: |
-        lithium
-        modernfix
-      MODRINTH_ALLOWED_VERSION_TYPE: release
+#     volumes:
+#       - mc_data:/data
+#       - mc_config:/config
 
-    volumes:
-      - mc_data:/data
-      - mc_config:/config
-
-volumes:
-  mc_data:
-  mc_config:
+# volumes:
+#   mc_data:
+#   mc_config:
