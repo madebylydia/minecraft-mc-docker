@@ -12,7 +12,7 @@ services:
       # Server settings
       EULA: "TRUE"
       TYPE: FABRIC
-      VERSION: "1.20"
+      VERSION: "1.20.6"
       USE_AIKAR_FLAGS: true
       SNOOPER_ENABLED: false
 
@@ -20,7 +20,7 @@ services:
       ONLINE_MODE: false
       SERVER_NAME: "Les potes: V2"
       ICON: /config/icon.png
-      MOTD: "Bienvenue chez &o&3Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\nHébergé par &4lydia39&7."
+      MOTD: "Bienvenue chez \u00A7o\u00A73Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\u00A7r\nHébergé par \u00A74lydia39\u00A77. Oui connard, c'est moi qui faut ping"
 
       # Game settings
       DIFFICULTY: normal
