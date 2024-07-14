@@ -30,8 +30,8 @@ services:
 
       # Whitelist
       ENABLE_WHITELIST: true
-      WHITELIST: FLydiaR
-      EXISTING_WHITELIST_FILE: SYNC_FILE_MERGE_LIST
+      WHITELIST_FILE: /config/whitelist.txt
+      EXISTING_WHITELIST_FILE: SYNCHRONIZE
 
       # RCON
       RCON_PASSWORD: $SERVICE_PASSWORD_RCON
