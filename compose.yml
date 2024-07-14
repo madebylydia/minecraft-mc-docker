@@ -1,9 +1,9 @@
 services:
-  copy_files:
+  copy-files:
     build: .
-    restart: "no"
-    depends_on:
-      - init
+    restart: no
+    volumes:
+      - mc_config:/config
 
   mc:
     image: itzg/minecraft-server
@@ -11,6 +11,7 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
+    depends_on: [copy-files]
 
     environment:
       # Server settings
@@ -25,7 +26,7 @@ services:
       SERVER_NAME: "Les potes: V2"
       ICON: /config/icon.png
       MOTD: "Bienvenue chez &o&3Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\nHébergé par &4lydia39&7."
-      
+
       # Game settings
       DIFFICULTY: normal
       VIEW_DISTANCE: 20
@@ -33,10 +34,10 @@ services:
       # Whitelist
       ENABLE_WHITELIST: true
       WHITELIST_FILE: /config/whitelist.txt
-      
+
       # RCON
-      RCON_PASSWORD: $PASSWORD_RCON
-      
+      RCON_PASSWORD: $SERVICE_PASSWORD_RCON
+
       # Mods
       MODRINTH_PROJECTS: |
         lithium
@@ -45,12 +46,8 @@ services:
 
     volumes:
       - mc_data:/data
-      - type: bind
-        read_only: true
-        source: config
-        target: /config
-        bind:
-          create_host_path: true
+      - mc_config:/config
 
 volumes:
   mc_data:
+  mc_config:
