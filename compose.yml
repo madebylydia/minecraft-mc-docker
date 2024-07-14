@@ -7,6 +7,7 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
+      - "2024:25575"
 
     environment:
       # Server settings
@@ -20,7 +21,7 @@ services:
       ONLINE_MODE: false
       SERVER_NAME: "Les potes: V2"
       ICON: /config/icon.png
-      MOTD: "Bienvenue chez \u00A7o\u00A73Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\u00A7r\nHébergé par \u00A74lydia39\u00A77. Oui connard, c'est moi qui faut ping"
+      MOTD: "Bienvenue chez \u00A7o\u00A73Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\u00A7r Hébergé par \u00A74lydia39\u00A77. Oui connard, c'est moi qui faut ping"
       MAX_PLAYERS: 10
 
       # Game settings
@@ -32,8 +33,7 @@ services:
       WHITELIST: |
         FLydiaR
       EXISTING_WHITELIST_FILE: MERGE
-      OPS: |
-        FLydiaR
+      EXISTING_OPS_FILE: MERGE
 
       # RCON
       RCON_PASSWORD: $SERVICE_PASSWORD_RCON
