@@ -12,7 +12,7 @@ services:
       # Server settings
       EULA: "TRUE"
       TYPE: FABRIC
-      VERSION: "1.20.6"
+      VERSION: 1.20.6
       USE_AIKAR_FLAGS: true
       SNOOPER_ENABLED: false
 
@@ -21,14 +21,19 @@ services:
       SERVER_NAME: "Les potes: V2"
       ICON: /config/icon.png
       MOTD: "Bienvenue chez \u00A7o\u00A73Les Potes: Saison 2 Remake revisée : L'intégrale Blu-Ray !\u00A7r\nHébergé par \u00A74lydia39\u00A77. Oui connard, c'est moi qui faut ping"
+      MAX_PLAYERS: 10
 
       # Game settings
       DIFFICULTY: normal
-      VIEW_DISTANCE: 20
+      VIEW_DISTANCE: 15
 
       # Whitelist
       ENABLE_WHITELIST: true
-      WHITELIST_FILE: /config/whitelist.txt
+      WHITELIST: |
+        FLydiaR
+      EXISTING_WHITELIST_FILE: MERGE
+      OPS: |
+        FLydiaR
 
       # RCON
       RCON_PASSWORD: $SERVICE_PASSWORD_RCON
