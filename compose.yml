@@ -2,6 +2,10 @@ services:
   test:
     # This is getting ridiculous, but at this point, I don't see what else I can do...
     image: alpine:latest
+    entrypoint: ["sh", "-c"]
+    tty: true
+    stdin_open: true
+    command: sh
     volumes:
       - ./config:/config
     
