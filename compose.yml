@@ -1,6 +1,8 @@
 services:
   mc:
-    build: .
+    build:
+      context: .
+      dockerfile: mc.Dockerfile
     tty: true
     stdin_open: true
     ports:
