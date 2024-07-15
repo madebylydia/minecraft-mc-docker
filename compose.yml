@@ -8,6 +8,7 @@ services:
     ports:
       - "25565:25565"
       - "20024:25575"
+    restart: no
 
     environment:
       # Server settings
@@ -63,7 +64,7 @@ services:
       CFG_DISCORD_BOT_TOKEN: $SERVICE_DISCORD_BOT_TOKEN
 
     volumes:
-      - mc_data:/data:rw
+      - mc_data:/data
       # Uncomment this part to re-sync the "mods_config" folder locally.
       # This doesn't work in production/Coolify.
       # - ./mods_config:/data/config
