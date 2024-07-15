@@ -137,7 +137,7 @@ charBlacklist = [  "࿕", "࿖"  ]
 [embedMode]
   # Enabling this will send configured messages as embed messages
   # See below configuration options of this category to see what messages can be moved to embeds
-  enabled = false
+  enabled = true
 
     # Starting & Started Messages
     [embedMode.startMessages]
