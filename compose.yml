@@ -40,11 +40,6 @@ services:
 
       # RCON
       RCON_PASSWORD: $SERVICE_PASSWORD_RCON
-      
-      # Auto-pause
-      ENABLE_AUTOPAUSE: true
-      MAX_TICK_TIME: 604800000
-      JVM_DD_OPTS: disable.watchdog=true
 
       # Mods
       MODS_FILE: /assets/mods.txt
@@ -54,6 +49,9 @@ services:
         fabric-api
         essential-commands:beta
         dcintegration
+        chunky
+        collective
+        villager-names-serilum
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_ALLOWED_VERSION_TYPE: release
       
