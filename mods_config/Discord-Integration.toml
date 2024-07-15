@@ -164,7 +164,7 @@ default_ignoreReactions = false
 default_pingSound = true
 
 [webhook]
-enable = false
+enable = true
 serverAvatarURL = "https://minecraft.wiki/images/Material_Reducer_%28S%29_BE1.png"
 serverName = "Serveur"
 useServerNameForRcon = true
@@ -177,7 +177,7 @@ useServerNameForConsole = true
 # %randomUUID% - Returns an random UUID which can be used to prevent discord cache
 # https://www.tydiumcraft.net/docs/skinapi supports both bedrock(floodgate) and java players
 # Default - https://api.tydiumcraft.net/v1/players/skin?uuid=%uuid%&type=avatar&randomuuid=%randomUUID%
-playerAvatarURL = "https://api.mineatar.io/head/%uuid%?scale=8"
+playerAvatarURL = "https://minepic.org/head/%name%/64"
 webhookName = "MC_DC_INTEGRATION"
 
 [ingameCommand]
