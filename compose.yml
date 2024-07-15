@@ -42,7 +42,6 @@ services:
       RCON_PASSWORD: $SERVICE_PASSWORD_RCON
 
       # Mods
-      MODS_FILE: /assets/mods.txt
       MODRINTH_PROJECTS: |
         lithium
         modernfix
