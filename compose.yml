@@ -16,6 +16,7 @@ services:
       VERSION: 1.20.6
       USE_AIKAR_FLAGS: true
       SNOOPER_ENABLED: false
+      TZ: Europe/Paris
 
       # Server metadata
       ONLINE_MODE: false
@@ -51,11 +52,23 @@ services:
         modernfix
         fabric-api
         essential-commands:beta
+        dcintegration
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_ALLOWED_VERSION_TYPE: release
+      
+      # Mods config
+      REPLACE_ENV_VARIABLES: "TRUE"
+      REPLACE_ENV_IN_PLACE: true
+      REPLACE_ENV_DURING_SYNC: true
+      REPLACE_ENV_SUFFIXES: yml,yaml,txt,cfg,conf,properties,hjson,json,toml
+      ENV_VARIABLE_PREFIX: "CFG_"
+      CFG_DISCORD_BOT_TOKEN: ${SERVICE_DISCORD_BOT_TOKEN}
 
     volumes:
       - mc_data:/data
+      # Uncomment this part to re-sync the "mods_config" folder locally.
+      # This doesn't work in production/Coolify.
+      # - ./mods_config:/data/config
 
 volumes:
   mc_data:
