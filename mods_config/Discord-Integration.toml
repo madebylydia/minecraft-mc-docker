@@ -164,7 +164,7 @@ default_ignoreReactions = false
 default_pingSound = true
 
 [webhook]
-enable = true
+enable = false
 serverAvatarURL = "https://minecraft.wiki/images/Material_Reducer_%28S%29_BE1.png"
 serverName = "Serveur"
 useServerNameForRcon = true
